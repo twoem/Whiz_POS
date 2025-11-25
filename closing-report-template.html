@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: 'monospace'; width: 80mm; margin: 0; padding: 10px; box-sizing: border-box; }
+        .center { text-align: center; }
+        .bold { font-weight: bold; }
+        .header { font-size: 24px; }
+        .section-header { font-size: 18px; margin-top: 15px; }
+        .table { width: 100%; border-collapse: collapse; }
+        .table th, .table td { padding: 5px; }
+        .table .label { text-align: left; }
+        .table .value { text-align: right; }
+        .cashier-section { margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1 class="header bold">{{businessName}}</h1>
+        <p>{{businessAddress}}</p>
+        <p>Tel: {{businessPhone}}</p>
+    </div>
+    <hr>
+    <div class="center">
+        <h2 class="section-header bold">DAILY SALES REPORT</h2>
+        <p>{{date}}</p>
+    </div>
+    <hr>
+    <div id="cashier-reports">
+        {{cashierReports}}
+    </div>
+    <hr>
+    <div class="center">
+        <h2 class="section-header bold">GRAND TOTALS</h2>
+    </div>
+    <hr>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td class="label">Total Cash:</td>
+                <td class="value">{{totalCash}}</td>
+            </tr>
+            <tr>
+                <td class="label">Total M-Pesa:</td>
+                <td class="value">{{totalMpesa}}</td>
+            </tr>
+            <tr>
+                <td class="label">Total Credit:</td>
+                <td class="value">{{totalCredit}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table class="table">
+        <tbody>
+            <tr class="bold">
+                <td class="label">GRAND TOTAL:</td>
+                <td class="value">{{grandTotal}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <div class="center">
+        <p>End of Day Report</p>
+    </div>
+</body>
+</html>

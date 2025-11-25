@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: 'monospace'; width: 80mm; margin: 0; padding: 10px; box-sizing: border-box; }
+        .center { text-align: center; }
+        .bold { font-weight: bold; }
+        .header { font-size: 24px; }
+        .section-header { font-size: 18px; margin-top: 15px; }
+        .table { width: 100%; border-collapse: collapse; }
+        .table th, .table td { padding: 5px; }
+        .table .label { text-align: left; }
+        .table .value { text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1 class="header bold">Welcome to WHIZ POS!</h1>
+        <p>Your business is now set up and ready to go.</p>
+    </div>
+    <hr>
+    <div>
+        <p><span class="bold">Business Name:</span> {{businessName}}</p>
+        <p><span class="bold">Address:</span> {{businessAddress}}</p>
+        <p><span class="bold">Phone:</span> {{businessPhone}}</p>
+    </div>
+    <hr>
+    <div>
+        <p class="bold">Your Admin User:</p>
+        <p>  Name: {{adminName}}</p>
+        <p>  PIN: {{adminPin}} (Keep this safe!)</p>
+    </div>
+    <hr>
+    <div class="center">
+        <h2 class="section-header bold">Startup Invoice</h2>
+    </div>
+    <hr>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td class="label">Software Cost:</td>
+                <td class="value">Ksh. 8,470.00</td>
+            </tr>
+            <tr>
+                <td class="label">Back Office & Hosting:</td>
+                <td class="value">Ksh. 5,720.00</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table class="table">
+        <tbody>
+            <tr class="bold">
+                <td class="label">TOTAL DUE:</td>
+                <td class="value">Ksh. 14,190.00</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <div class="center">
+        <p>All future support is free.</p>
+        <p>"The secret of getting ahead is getting started."</p>
+        <p>- Mark Twain</p>
+    </div>
+</body>
+</html>

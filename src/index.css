@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  /* Touch-friendly tap targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Mobile-safe areas */
+  .mobile-safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .mobile-safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  
+  /* Smooth scrolling for mobile */
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+  
+  /* Mobile animations */
+  .mobile-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Haptic feedback indicators */
+  .haptic-feedback {
+    position: relative;
+  }
+  
+  .haptic-feedback::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.3);
+    transform: translate(-50%, -50%);
+    animation: hapticPulse 0.15s ease-out;
+    pointer-events: none;
+  }
+  
+  @keyframes hapticPulse {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
+    }
+  }
+}
+
+/* Mobile-specific component styles */
+.mobile-product-card {
+  @apply bg-white rounded-2xl shadow-lg p-4 transition-all active:scale-95;
+  min-height: 120px;
+}
+
+.mobile-number-pad {
+  @apply grid grid-cols-3 gap-3;
+  touch-action: manipulation;
+}
+
+.mobile-number-button {
+  @apply p-6 bg-white/20 hover:bg-white/30 border border-white/30 rounded-2xl text-2xl font-bold text-white transition-all active:scale-95;
+  min-height: 60px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-pin-display {
+  @apply flex justify-center space-x-2 mb-6;
+}
+
+.mobile-pin-dot {
+  @apply w-4 h-4 rounded-full transition-colors;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.mobile-swipe-hint {
+  @apply text-center mt-3 text-sm text-gray-500;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

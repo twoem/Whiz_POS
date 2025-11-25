@@ -187,7 +187,7 @@ npm run dev
 **Proprietary software — Whiz Tech**
 
 📞 Contact: **0740-841-168**  
-📧 (Add email if needed)
+📧 Email: whiz.techke@gmail.com
 
 ---
 

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">WHIZ POS</string>
+    <string name="title_activity_main">WHIZ POS</string>
+    <string name="package_name">com.whizpos.app</string>
+    <string name="custom_url_scheme">com.whizpos.app</string>
+</resources>

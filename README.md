@@ -1,110 +1,196 @@
-# WHIZ POS
+<p align="center">
+  <img src="./assets/logo.png" width="160" />
+</p>
 
-WHIZ POS is a modern, feature-rich Point of Sale system designed for cafés, restaurants, and retail businesses. It provides a comprehensive suite of tools for managing sales, inventory, expenses, customers, and reporting.
+<h1 align="center">✨ WHIZ POS ✨</h1>
 
-The system consists of three main components:
-1.  **Desktop POS (Electron/React):** The primary interface for cashiers to process transactions, manage daily operations, and print receipts.
-2.  **Back Office (Node.js/Express):** A web-based administration panel for owners and managers to view analytics, manage inventory remotely, and control user access.
-3.  **Mobile App (Capacitor/React):** A mobile companion for taking orders and processing payments on the go (Android).
+<p align="center">
+  <strong>A modern, offline-first, full-feature Point of Sale ecosystem for cafés, restaurants & retail.</strong><br/>
+  Desktop POS • Back Office Web Dashboard • Mobile Ordering App
+</p>
 
-## Features
+<p align="center">
+  <a href="#"><img alt="Node" src="https://img.shields.io/badge/Node.js-18%2B-43853D?style=for-the-badge&logo=node.js&logoColor=white"/></a>
+  <a href="#"><img alt="Electron" src="https://img.shields.io/badge/Electron-App-2C2E3B?style=for-the-badge&logo=electron&logoColor=white"/></a>
+  <a href="#"><img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-Database-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white"/></a>
+</p>
 
--   **Point of Sale:** Fast and intuitive checkout interface supporting Cash, M-Pesa, and Credit payments.
--   **Inventory Management:** Real-time tracking of stock levels, low stock alerts, and product management.
--   **Expense Tracking:** Record and categorize business expenses directly from the POS.
--   **Credit Management:** Track customer credit, record partial payments, and view transaction history.
--   **Reporting:** Generate detailed daily sales reports, closing reports, and sales analytics.
--   **Offline-First:** The Desktop POS works offline and synchronizes data with the Back Office when an internet connection is available.
--   **Receipt Printing:** Professional thermal receipt printing with customizable headers and footers.
--   **Mobile Integration:** Connect mobile devices to the Desktop POS to print receipts via a local API.
+---
 
-## Architecture
+## 🌟 Overview
 
-### Desktop POS (Electron)
--   **Framework:** Electron with React and TypeScript.
--   **State Management:** Zustand with persistence (local storage).
--   **Data Storage:** Local JSON files (filesystem) for offline capability.
--   **Printing:** Native Electron printing using hidden windows and HTML templates.
--   **Sync:** Queues offline operations and pushes them to the Back Office API when online.
+**WHIZ POS** is a complete ecosystem designed to streamline business operations for cafés, restaurants, shops, and retail outlets.
+It is **fast**, **beautiful**, **offline-ready**, and **built for real-world business workflows.**
 
-### Back Office (Web)
--   **Framework:** Node.js with Express.
--   **Database:** MongoDB (Mongoose ODM).
--   **Templating:** EJS for server-side rendering of admin pages.
--   **API:** RESTful API for data synchronization with the Desktop POS.
--   **Authentication:** Session-based auth for web access, API Key for POS synchronization.
+The system consists of:
 
-## Setup & Installation
+| Component | Tech | Purpose |
+|----------|------|---------|
+| **Desktop POS (Electron/React)** | Electron + React + TypeScript | Fast cashier interface, offline-first transactions, receipt printing |
+| **Back Office Web (Node/Express)** | Node.js + MongoDB + EJS | Business analytics, inventory, expenses, credit management |
+| **Mobile App (Capacitor/React)** | Hybrid Android App | Take orders remotely, sync instantly with POS |
 
-### Prerequisites
--   Node.js (v18 or higher recommended)
--   MongoDB (Local or Atlas URI)
+---
 
-### 1. Desktop POS Setup
-1.  Clone the repository.
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Start the development server:
-    ```bash
-    npm run dev
-    ```
-    This command concurrently starts the Vite dev server and the Electron app.
+## 🚀 Features
 
-### 2. Back Office Setup
-1.  Navigate to the `back-office` directory:
-    ```bash
-    cd back-office
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Create a `.env` file in the `back-office` directory with the following variables:
-    ```env
-    PORT=5000
-    MONGODB_URI=mongodb://localhost:27017/whizpos
-    SESSION_SECRET=your_secret_key
-    API_KEY=your_secure_api_key
-    BUSINESS_NAME=My Business
-    ```
-4.  Start the server:
-    ```bash
-    npm run dev
-    ```
+### 🛒 **Point of Sale**
+- Lightning-fast checkout
+- Cash / M-Pesa / Credit payments
+- Instant receipt printing
 
-### 3. Linking Desktop and Back Office
-1.  Open the Desktop POS application.
-2.  Navigate to **Manage > Devices & Connections**.
-3.  Enter your Back Office URL (e.g., `http://localhost:5000`) and the `API_KEY` you defined in the `.env` file.
-4.  Click **Save Settings**.
-5.  Click **Sync Local Data to Cloud** to perform an initial upload of your local data to the database.
+### 📦 **Inventory Management**
+- Live stock tracking
+- Automatic low-stock notifications
+- Bulk product management
 
-## Usage
+### 💸 **Expense Tracking**
+- Categorized expenses
+- Daily, weekly & monthly summaries
 
-### Processing Sales
--   Add items to the cart by clicking on them in the product grid.
--   Click "Checkout" to select a payment method.
--   For **Credit** sales, select an existing customer or add a new one.
+### 👥 **Credit/Customer Management**
+- Customer credit limits
+- Partial payments
+- Transaction history
 
-### Closing the Day
--   Go to the **Closing** tab (Admin/Manager only).
--   Review the daily totals for Cash, M-Pesa, and Credit.
--   Print the **Closing Report** for your records.
+### 📊 **Reporting & Analytics**
+- Daily sales
+- Closing summaries
+- Product performance
 
-### Data Synchronization
--   The system attempts to sync automatically in the background.
--   You can monitor sync status in the **Manage** page.
--   If offline, transactions are queued and synced automatically when connection is restored.
+### 🔌 **Offline-First Sync**
+- POS works 100% offline
+- Auto-sync to Back Office when reconnecting
 
-## Development
+### 📱 **Mobile Integration**
+- Local API printing
+- Remote order sending
 
--   **Electron Main Process:** `electron.cjs`
--   **Preload Script:** `preload.js`
--   **Frontend Source:** `src/`
--   **Back Office Source:** `back-office/`
+---
 
-## License
-Proprietary software developed by Whiz Tech.
-Contact: 0740-841-168
+## 🧱 Architecture Diagram
+
+<details>
+<summary><strong>Click to Expand 🖼️</strong></summary>
+
+```
+ ┌───────────────────────┐
+ │    Mobile App         │
+ │  (Capacitor/React)    │
+ └───────────┬───────────┘
+             │
+             ▼
+ ┌───────────────────────┐
+ │   Desktop POS (Electron)  
+ │   - Offline queueing
+ │   - Local JSON store
+ └───────────┬───────────┘
+             │ Sync API
+             ▼
+ ┌────────────────────────┐
+ │   Back Office (Node.js)
+ │   - MongoDB Database
+ │   - API & Dashboard
+ └────────────────────────┘
+```
+
+</details>
+
+---
+
+## ⚙️ Installation & Setup
+
+### 📌 Prerequisites
+- Node.js **v18+**
+- MongoDB (Local or Atlas)
+
+---
+
+### 🖥️ **1. Desktop POS Setup**
+
+```bash
+git clone <repo>
+npm install
+npm run dev
+```
+
+Starts both Vite (React) and Electron processes.
+
+---
+
+### 🌐 **2. Back Office Setup**
+
+```bash
+cd back-office
+npm install
+```
+
+Create **.env**:
+
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/whizpos
+SESSION_SECRET=your_secret_key
+API_KEY=your_secure_api_key
+BUSINESS_NAME=My Business
+```
+
+Start:
+```bash
+npm run dev
+```
+
+---
+
+### 🔗 **3. Connect Desktop POS to Back Office**
+
+1. Open Desktop POS  
+2. Go to **Manage → Devices & Connections**  
+3. Enter Back Office URL + `API_KEY`  
+4. Save  
+5. Run **Sync Local Data to Cloud**
+
+---
+
+## 🧑‍💼 Usage Guide
+
+### 🛍️ Processing Sales
+- Tap items → Add to cart  
+- **Checkout → choose payment method**  
+- For credit: choose/add customer  
+
+### 📘 End-of-Day Closing
+- Go to **Closing**  
+- Review totals: Cash, M-Pesa, Credit  
+- Print **Closing Report**  
+
+### 🔄 Synchronization
+- Auto-sync runs in background  
+- If offline → queues locally  
+- Syncs the moment connection is restored  
+
+---
+
+## 🛠️ Development Notes
+
+| Area | Path |
+|------|------|
+| Electron Main | `electron.cjs` |
+| Preload | `preload.js` |
+| Frontend (React) | `src/` |
+| Back Office (Node) | `back-office/` |
+
+---
+
+## 📄 License
+
+**Proprietary software — Whiz Tech**
+
+📞 Contact: **0740-841-168**  
+📧 (Add email if needed)
+
+---
+
+<p align="center">
+  Made with ❤️ by <strong>Whiz Tech</strong>
+</p>
